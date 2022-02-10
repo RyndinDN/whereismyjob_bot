@@ -13,6 +13,7 @@ import languageMenu from '@/menus/language'
 import sendHelp from '@/handlers/help'
 import sendTraining from '@/handlers/training'
 import startMongo from '@/helpers/startMongo'
+import trainingMenu from './menus/training'
 
 async function runApp() {
   console.log('Starting app...')
@@ -28,6 +29,7 @@ async function runApp() {
     .use(configureI18n)
     // Menus
     .use(languageMenu)
+    .use(trainingMenu)
   // Commands
   bot.command(['help', 'start'], sendHelp)
   bot.command('language', handleLanguage)
