@@ -11,6 +11,7 @@ import handleLanguage from '@/handlers/language'
 import i18n from '@/helpers/i18n'
 import languageMenu from '@/menus/language'
 import sendHelp from '@/handlers/help'
+import sendTraining from '@/handlers/training'
 import startMongo from '@/helpers/startMongo'
 
 async function runApp() {
@@ -30,6 +31,7 @@ async function runApp() {
   // Commands
   bot.command(['help', 'start'], sendHelp)
   bot.command('language', handleLanguage)
+  bot.command('training', sendTraining)
   // Errors
   bot.catch(console.error)
   // Start bot
